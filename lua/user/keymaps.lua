@@ -38,10 +38,20 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Resize with arrows
-keymap("n", "\\j", ":resize -2<CR>", opts)
-keymap("n", "\\k", ":resize +2<CR>", opts)
-keymap("n", "\\l", ":vertical resize -2<CR>", opts)
-keymap("n", "\\h", ":vertical resize +2<CR>", opts)
+keymap("n", "\\j", "<cmd>resize -2<CR>", opts)
+keymap("n", "\\k", "<cmd>resize +2<CR>", opts)
+keymap("n", "\\l", "<cmd>vertical resize -2<CR>", opts)
+keymap("n", "\\h", "<cmd>vertical resize +2<CR>", opts)
+
+-- Navigate buffers
+keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
+keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
+
+-- Clear highlights
+keymap("n", "<leader>h", "<cmd>set hlsearch!<CR>", opts)
+
+-- Close buffers
+keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
 -- Better paste
 keymap("v", "p", '"_dP', opts)
@@ -50,3 +60,14 @@ keymap("v", "p", '"_dP', opts)
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Plugins --
+
+-- NvimTree
+keymap("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", opts)
+
+-- Comment
+keymap("n", "<leader>/",
+       "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+keymap("x", "<leader>/",
+       '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')

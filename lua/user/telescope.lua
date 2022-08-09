@@ -7,6 +7,7 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
+    history = false, -- TODO: use "telescope-smart-history.nvim"
 
     prompt_prefix = " ",
     selection_caret = " ",

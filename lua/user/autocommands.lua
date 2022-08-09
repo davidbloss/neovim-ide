@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     local opts = { silent = true, noremap = true  }
     vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>close<CR>", opts)
-    nvim.api.nvim_set_option("nobuflisted", true)
+    vim.api.nvim_set_option("nobuflisted", true)
   end,
 })
 
@@ -21,12 +21,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "User" }, {
   pattern = { "AlphaReady" },
   callback = function()
-    nvim.api.nvim_set_option("laststatus", 0)
-    nvim.api.nvim_set_option("showtabline", 0)
+    vim.api.nvim_set_option("laststatus", 0)
+    vim.api.nvim_set_option("showtabline", 0)
     vim.api.nvim_create_autocmd({ "BufUnload" }, {
       callback = function()
-        nvim.api.nvim_set_option("laststatus", 3)
-        nvim.api.nvim_set_option("showtabline", 2)
+        vim.api.nvim_set_option("laststatus", 3)
+        vim.api.nvim_set_option("showtabline", 2)
       end
     })
   end,
@@ -36,8 +36,8 @@ vim.api.nvim_create_autocmd({ "User" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "gitcommit", "markdown" },
   callback = function()
-    nvim.api.nvim_set_option("spell", true)
-    nvim.api.nvim_set_option("wrap", true)
+    vim.api.nvim_set_option("spell", true)
+    vim.api.nvim_set_option("wrap", true)
   end,
 })
 

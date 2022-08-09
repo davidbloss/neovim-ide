@@ -26,6 +26,7 @@ return packer.startup(function(use)
   use { "akinsho/toggleterm.nvim" }
   use { "ahmedkhalf/project.nvim" }
   use { "goolord/alpha-nvim" }
+  use { "folke/which-key.nvim" }
 
   -- Colorschemes
   use { "folke/tokyonight.nvim" }

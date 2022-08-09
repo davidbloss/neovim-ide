@@ -17,13 +17,14 @@ packer.init {
 return packer.startup(function(use)
   -- My plugins here
   use { "wbthomason/packer.nvim" } -- Have packer manage itself
-  use { "nvim-lua/plenary.nvim", } -- Useful lua functions used by lots of plugins
-  use { "windwp/nvim-autopairs", } -- Autopairs, integrates with both cmp and treesitter
-  use { "numToStr/Comment.nvim", }
-  use { "kyazdani42/nvim-tree.lua", }
-  use { "akinsho/bufferline.nvim", }
-  use { "nvim-lualine/lualine.nvim", }
-  use { "ahmedkhalf/project.nvim", }
+  use { "nvim-lua/plenary.nvim" } -- Useful lua functions used by lots of plugins
+  use { "windwp/nvim-autopairs" } -- Autopairs, integrates with both cmp and treesitter
+  use { "numToStr/Comment.nvim" }
+  use { "kyazdani42/nvim-tree.lua" }
+  use { "akinsho/bufferline.nvim" }
+  use { "nvim-lualine/lualine.nvim" }
+  use { "akinsho/toggleterm.nvim" }
+  use { "ahmedkhalf/project.nvim" }
   use { "goolord/alpha-nvim" }
 
   -- Colorschemes

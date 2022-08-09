@@ -4,7 +4,7 @@ local format_on_save = vim.api.nvim_create_augroup("format_on_save", {})
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   group = format_on_save,
   pattern = { "*" },
-  command = vim.cmd("<cmd>%s/\\s\\+$//e")
+  command = vim.cmd("%s/\\s\\+$//e")
 })
 
 -- Use 'q' to quit from common plugins
@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd({ "User" }, {
     vim.bo.laststatus = 0
     vim.bo.showtabline = 0
     vim.api.nvim_create_autocmd({ "BufUnload" }, {
-      callback = function ()
+      callback = function()
         vim.bo.laststatus = 3
         vim.bo.showtabline = 2
       end

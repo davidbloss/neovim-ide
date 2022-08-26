@@ -23,6 +23,7 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua" }
   use { "kyazdani42/nvim-web-devicons" }
   use { "akinsho/bufferline.nvim" }
+  use { "mbbill/undotree" }
   use { "nvim-lualine/lualine.nvim" }
   use { "akinsho/toggleterm.nvim" }
   use { "ahmedkhalf/project.nvim" }
@@ -47,8 +48,16 @@ return packer.startup(function(use)
   use { "L3MON4D3/LuaSnip" } --snippet engine
   use { "rafamadriz/friendly-snippets" } -- a bunch of snippets to use
 
+  -- LSP
+  use { "neovim/nvim-lspconfig" }
+  use { "williamboman/nvim-lsp-installer" }
+  use { "jose-elias-alvarez/null-ls.nvim" }
+
   -- Telescope
   use { "nvim-telescope/telescope.nvim" }
+
+  -- Treesitter
+  use { "nvim-treesitter/nvim-treesitter" }
 
   -- Git
   use { "lewis6991/gitsigns.nvim" }

@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   callback = function()
     local opts = { silent = true, noremap = true  }
     vim.api.nvim_buf_set_keymap(0, "n", "q", "<cmd>close<CR>", opts)
-    vim.api.nvim_set_option("nobuflisted", true)
+    vim.api.nvim_set_option("buflisted", false)
   end,
 })
 

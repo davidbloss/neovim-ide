@@ -23,6 +23,8 @@ return packer.startup(function(use)
   use { "kyazdani42/nvim-tree.lua" }
   use { "kyazdani42/nvim-web-devicons" }
   use { "akinsho/bufferline.nvim" }
+  use { "moll/vim-bbye" }
+  use { "mbbill/undotree" }
   use { "nvim-lualine/lualine.nvim" }
   use { "akinsho/toggleterm.nvim" }
   use { "ahmedkhalf/project.nvim" }

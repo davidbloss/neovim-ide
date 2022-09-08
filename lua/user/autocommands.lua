@@ -7,6 +7,18 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   command = vim.cmd("%s/\\s\\+$//e")
 })
 
+-- Format shell scripts with formatter
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "bash", "csh", "ksh", "sh", "zsh" },
+  callback = function()
+    vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+      callback = function()
+        vim.lsp.buf.formatting()
+      end,
+    })
+  end,
+})
+
 -- Use 'q' to quit from common plugins
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = { "qf", "help", "man", "lspinfo", "spectre_panel", "lir" },
